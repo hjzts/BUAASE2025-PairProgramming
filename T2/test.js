@@ -2,7 +2,7 @@ import assert from "assert";
 
 // Choose proper "import" depending on your PL.
 // import { greedySnakeMoveBarriers } from "./t2_as/build/release.js";
-// import { greedy_snake_move_barriers as greedySnakeMoveBarriers } from "./t2_rust/pkg/t2_rust.js"
+import { greedy_snake_move_barriers as greedySnakeMoveBarriers } from "./main/pkg/main.js"
 // [Write your own "import" for other PLs.]
 
 function greedy_snake_barriers_checker(initial_snake, food_num, foods, barriers, access) {
@@ -30,6 +30,8 @@ function greedy_snake_barriers_checker(initial_snake, food_num, foods, barriers,
                 return 1;
             }
         }
+
+        console.log("turn " + turn + " :" + direction);
 
         // invalid direction
         if (direction < 0 || direction > 3) return -4; 
@@ -91,14 +93,16 @@ assert.strictEqual(
     true
 );
 
+let res = greedy_snake_barriers_checker(
+    [1,4,1,3,1,2,1,1], 
+    1,                  
+    [5,5],                              
+    [2,7,2,6,3,7,3,6,4,6,5,6,6,6,7,6,4,5,4,4,4,3,5,4],
+    1             
+);
+console.log("res: " + res);
 assert.strictEqual(
-    greedy_snake_barriers_checker(
-        [1,4,1,3,1,2,1,1], 
-        1,                  
-        [5,5],                              
-        [2,7,2,6,3,7,3,6,4,6,5,6,6,6,7,6,4,5,4,4,4,3,5,4],
-        1             
-    ) > 0,
+    res > 0,
     true
 );
 
