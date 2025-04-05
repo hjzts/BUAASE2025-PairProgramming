@@ -2,7 +2,7 @@ import assert from "assert";
 
 // Choose proper "import" depending on your PL.
 // import { greedy_snake_move } from "./t1-as/build/release.js";
-// import { greedy_snake_move } from "./t1_rust/pkg/t1_rust.js";
+import { greedy_snake_move } from "./main/pkg/main.js";
 // [Write your own "import" for other PLs.]
 
 function greedy_snake_fn_checker (snake, food) {
